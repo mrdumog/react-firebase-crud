@@ -1,9 +1,10 @@
 .App {
   text-align: center;
+  color: #000;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 5vmin;
   pointer-events: none;
 }
 
@@ -15,9 +16,9 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -26,6 +27,90 @@
 
 .App-link {
   color: #61dafb;
+}
+.bg-red {
+  background-color: red;
+  color: #fff;
+}
+.main {
+  min-height: 85vh;
+  display: inline-block;
+}
+.form-block {
+  background-color: aliceblue;
+  margin: 20px;
+  justify-content: center;
+  border: 2px solid #6b7791;
+  width: 400px;
+  border-radius: 10px;
+  display: block;
+}
+.form-data-action {
+  display: flex;
+  background-color: rgb(26, 86, 252);
+  border-radius: 0 0 10px 10px;
+  padding: 0 20px 0 20px;
+}
+.form-data-action a {
+  display: flex;
+  width: -webkit-fill-available;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-around;
+  color: #000;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+}
+.form-data-action a:hover {
+  background-color: red;
+}
+.data-block {
+  background-color: aliceblue;
+  margin: 20px;
+  justify-content: center;
+  border: 2px solid #6b7791;
+  width: 300px;
+  border-radius: 10px;
+  display: inline-block;
+}
+.data-row {
+  padding: 5px;
+  border-bottom: 1px solid #6b7791;
+  text-align: left;
+  display: flex;
+}
+.data-row label {
+  width: 60px;
+  font-weight: bold;
+}
+.data-action {
+  display: flex;
+  background-color: #61dafb;
+  border-radius: 0 0 10px 10px;
+  padding: 0 20px 0 20px;
+}
+.data-action a {
+  display: flex;
+  width: -webkit-fill-available;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-around;
+  color: #000;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+}
+.data-action a:hover {
+  background-color: #13afda;
+}
+.footer {
+  min-height: 5vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: aliceblue;
 }
 
 @keyframes App-logo-spin {
