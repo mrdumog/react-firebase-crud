@@ -52,6 +52,7 @@
   padding: 0 20px 0 20px;
 }
 .form-data-action a {
+  padding: 10px;
   display: flex;
   width: -webkit-fill-available;
   flex-wrap: nowrap;
@@ -75,7 +76,7 @@
   display: inline-block;
 }
 .data-row {
-  padding: 5px;
+  padding: 10px;
   border-bottom: 1px solid #6b7791;
   text-align: left;
   display: flex;
@@ -91,6 +92,7 @@
   padding: 0 20px 0 20px;
 }
 .data-action a {
+  padding: 10px;
   display: flex;
   width: -webkit-fill-available;
   flex-wrap: nowrap;

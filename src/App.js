@@ -1,13 +1,27 @@
-import logo from "./logo.svg";
+import { useState, useEffect } from "react";
+import { db } from "./firebase-config";
+import { collection, getDocs } from "firebase/firestore";
+
+import Header from "./header";
+import Footer from "./footer";
+
 import "./App.css";
 
 function App() {
+  const [users, setUsers] = useState([]);
+  const usersCollectionRef = collection(db, "react-firebase-crud");
+  useEffect(() => {
+    const getUsers = async () => {
+      const data = await getDocs(usersCollectionRef);
+      setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      
+    };
+    getUsers();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>React & Firebase CRUD App</p>
-      </header>
+      <Header />
       <div class="main">
         <div class="form-block">
           <div class="data-row">
@@ -24,73 +38,30 @@ function App() {
             <a href="#">Save</a>
           </div>
         </div>
-        <div class="data-block">
-          <div class="data-row">
-            <label>Name:</label>My Name
-          </div>
-          <div class="data-row">
-            <label>Age:</label>23
-          </div>
-          <div class="data-row">
-            <label>City:</label>Denver
-          </div>
-          <div class="data-action">
-            <a href="#">Edit</a>
-            <a href="#">Delete</a>
-          </div>
-        </div>
-        <div class="data-block">
-          <div class="data-row">
-            <label>Name:</label>My Name
-          </div>
-          <div class="data-row">
-            <label>Age:</label>23
-          </div>
-          <div class="data-row">
-            <label>City:</label>Denver
-          </div>
-          <div class="data-action">
-            <a href="#">Edit</a>
-            <a href="#">Delete</a>
-          </div>
-        </div>
-        <div class="data-block">
-          <div class="data-row">
-            <label>Name:</label>My Name
-          </div>
-          <div class="data-row">
-            <label>Age:</label>23
-          </div>
-          <div class="data-row">
-            <label>City:</label>Denver
-          </div>
-          <div class="data-action">
-            <a href="#">Edit</a>
-            <a href="#">Delete</a>
-          </div>
-        </div>
-        <div class="data-block">
-          <div class="data-row">
-            <label>Name:</label>My Name
-          </div>
-          <div class="data-row">
-            <label>Age:</label>23
-          </div>
-          <div class="data-row">
-            <label>City:</label>Denver
-          </div>
-          <div class="data-action">
-            <a href="#">Edit</a>
-            <a href="#">Delete</a>
-          </div>
-        </div>
+        {users.map((user) => {
+          return (
+            <div class="data-block">
+              <div class="data-row">
+                <label>Name:</label>
+                {user.name}
+              </div>
+              <div class="data-row">
+                <label>Age:</label>
+                {user.age}
+              </div>
+              <div class="data-row">
+                <label>City:</label>
+                {user.city}
+              </div>
+              <div class="data-action">
+                <a href="#">Edit</a>
+                <a href="#">Delete</a>
+              </div>
+            </div>
+          );
+        })}
       </div>
-      <div class="footer">
-        &copy; 2023{" An Opensource Project by "}
-        <a href="https://github.com/mrdumog" target="_new">
-          Ishwar Acharya
-        </a>
-      </div>
+      <Footer />
     </div>
   );
 }
