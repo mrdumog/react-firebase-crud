@@ -3,7 +3,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Screenshot
-![Screenshot_1](https://github.com/mrdumog/react-firebase-crud/assets/55739073/0421a61c-94be-47f4-bcde-74c2e7b6f578)
+![Screenshot_1](https://github.com/mrdumog/react-firebase-crud/assets/55739073/51ec7d4a-0540-4fbc-9e7e-e26107443d42)
 
 ## Available Scripts
 
